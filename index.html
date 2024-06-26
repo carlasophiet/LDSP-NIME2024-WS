@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LDSP NIME 2024 WORKSHOP RESOURCES</title>
+</head>
+<body>
+
+	<div id="intro">
+
+		<h1> LDSP </h1>
+
+		<p id="subtitle"> NIME 2024 WORKSHOP RESOURCES</p>
+
+		<p>Designing interactive audio applications on Android phones is challenging. Despite the ever growing computational power and feature set of such devices, Android audio app development is notoriously affected by performance as well as workflow issues. This is due to the nature of the Android software ecosystem, that includes partially proprietary firmware and imposes specific development tools. In this hands-on workshop, we introduce NIME attendees to LDSP, an open-source software environment that enables to hack Android phones and program them as embedded Linux audio boards. In the first half of the day, attendees will explore the capabilities of LDSP using phones hacked by the presenters, by trying/extending examples written in C++ and Pd. These span oscillators, samples, effects, sensors and more. In the second half, attendees will be able to explore more advanced features, like spectral and neural processing, or to hack their own phones, using the convenient tools provided by LDSP. </p> </br>
+		<p>You can read more about LDSP in these <a href="https://www.dafx.de/paper-archive/2023/DAFx23_paper_44.pdf" target="_blank">two</a> <a href="https://drive.google.com/file/d/1UVR7LiwlrKoff6cJI32-H6zWrwyu4-4R/view?usp=drive_link" target="_blank">papers</a>.</p>
+
+	</div>
+
+	<!--CLOSED INTRO DIV--->
+
+	<div id="dependencies">
+		<h2> DEPENDENCIES (CHANGES LINKS?)</h2>	
+			<ul>
+				<li>
+					<h3> Android NDK</h3>
+					<p>
+						For <b>Linux and Windows</b> you can find it <a href=" https://developer.android.com/ndk/downloads" target="_blank">here</a>. For <b>MacOS</b>, you can find it <a href="https://dl.google.com/android/repository/android-ndk-r25c-darwin.zip" target="_blank">here</a> or through Homebrew like <a href="https://macappstore.org/android-ndk/" target="_blank">this</a>.
+					</br>
+						Please, not down the path of the NKD as you will need it later. In macOS you can do it with the command <p class="code"> sudo find / -name 'clang++'</p>
+					</p>
+				</li>
+				<li>
+					<h3>CMake</h3>
+					<p>
+						<b>For all OS</b>, you can find the download <a href="https://cmake.org/download/" target="_blank">here</a>. To install follow the instructions <a href="https://cmake.org/install/" target="_blank">here.</a>.</br>
+						You can check if it was successfully installed typing in the command line <p class="code"> cmake --version</p>
+					</p>
+				</li>
+				<li>
+					<h3>Ninja Build System</h3>
+					<p> For <b>Linux</b> you can install via your package manager. For <b>macOS</b> you can install through Homebrew or MacPorts, otherwise follow Windows instructions. For <b>Windows</b>, you can download <a href="https://github.com/ninja-build/ninja/releases" target="_blank">here</a></p> and then add the path to the binary in your <a href="https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho/69383805#69383805" target="_blank">PATH environment variable</a>.</br>
+						You can check if it was successfully installed typing in the command line <p class="code"> ninja --version</p>
+				</li>
+				<li>
+					<h3>ADB (android device bridge)</h3>
+					<p> For <b>Linux</b> you can install via your package manager. For <b>macOS</b> you can install through Homebrew or MacPorts, otherwise follow Windows instructions. For <b>Windows</b>, download the Android SDK, adb will be <a href="https://developer.android.com/tools/releases/platform-tools" target="_blank">there</a></p> and then add the path to the binary in your <a href="https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho/69383805#69383805" target="_blank">PATH environment variable</a>.</br>
+					You can check if it was successfully installed typing in the command line <p class="code">adb --version</p>
+					<p>To see if ADB can connect to your phone:</p>
+					<ul>
+						<li><a href=" https://developer.android.com/studio/debug/dev-options" target="_blank">Activate developer options on your phone</a></li>
+						<li>Connect your phone to your laptop with a USB cable capable of transfering data (e.g., images), as opposed to one that can only charge the phone</li>
+						<li>Open a shell on your laptop and try to connect/open a shell on your phone with:
+							<p class="code"> adb shell</p></li>
+						Your phone will likely ask you for permission before allowing connection, grant it permission.
+					</ul>
+				</li>
+				<li>
+					<h3>ADB drivers [Windows only]</h3>
+					<p>is this still needed?</p>
+				</li>
+				<li><h3>Git [optional] </h3>
+					<p>You can find it <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">here</a></p>.
+				</li>
+				<li>
+					<h3>Pure Data "vanilla" [optional]</h3>
+					<p>You can find it <a href="https://puredata.info/downloads" target="_blank">here</a></p>.
+				</li>
+			</ul>
+	</div> 
+
+<!---CLOSED DEPENDENCIES DIV--->
+
+	<div id="install">
+		<p>
+			In order to install LDSP on your computer you need to clone the <a href="https://github.com/victorzappi/LDSP" target="_blank">Github repository</a> to a convenient location where you can access the examples and write your own codes easily. You can do so from the command line with <p>git clone --recurse-submodules https://github.com/victorzappi/LDSP.git</p>
+		</p>
+		<p>
+			Finally, you need to export a new environment vairable called NDK, to the path to the actual content fo the Android NDK. This can be done on <a href="https://stackoverflow.com/questions/13046624/how-can-i-permanently-export-a-variable-in-linux/13046663#13046663" target="_blank"><b>Linux</b></a>, <a href="https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac" target="_blank"><b>macOS</b></a> and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4&viewFallbackFrom=powershell-7.3#saving-environment-variables-with-the-system-control-panel" target="_blank"><b>Windows</b></a>.
+		</p>
+		
+	</div>
+	<div>
+		<p>
+			Thank you very much for being interested in LDSP! And see you in the Workshop!
+		</p>
+	</div>
+</body>
+</html>
