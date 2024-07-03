@@ -3,25 +3,44 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href= "style.css" rel="stylesheet">
 	<title>LDSP NIME 2024 WORKSHOP RESOURCES</title>
 </head>
 <body>
 
-	<div id="intro">
+	<div id="intro" class="white-back">
 
-		<h1> LDSP </h1>
+		<img src="LDSP_logo.png" alt="LDSP logo in orange and ocre" id="logo" >
 
-		<p id="subtitle"> NIME 2024 WORKSHOP RESOURCES</p>
+		<h3 id="subtitle"> NIME 2024 WORKSHOP RESOURCES</h3>
 
-		<p>Designing interactive audio applications on Android phones is challenging. Despite the ever growing computational power and feature set of such devices, Android audio app development is notoriously affected by performance as well as workflow issues. This is due to the nature of the Android software ecosystem, that includes partially proprietary firmware and imposes specific development tools. In this hands-on workshop, we introduce NIME attendees to LDSP, an open-source software environment that enables to hack Android phones and program them as embedded Linux audio boards. In the first half of the day, attendees will explore the capabilities of LDSP using phones hacked by the presenters, by trying/extending examples written in C++ and Pd. These span oscillators, samples, effects, sensors and more. In the second half, attendees will be able to explore more advanced features, like spectral and neural processing, or to hack their own phones, using the convenient tools provided by LDSP. </p> </br>
+	</div>
+	<!--CLOSED INTRO DIV--->
+
+	<div id="description" >
+
+		<h2>WORKSHOP DESCRIPTION</h2>
+
+		<p>Designing interactive audio applications on Android phones is challenging. Despite the ever growing computational power and feature set of such devices, Android audio app development is notoriously affected by performance as well as workflow issues. This is due to the nature of the Android software ecosystem, that includes partially proprietary firmware and imposes specific development tools. In this hands-on workshop, we introduce NIME attendees to LDSP, an open-source software environment that enables to hack Android phones and program them as embedded Linux audio boards. In the first half of the day, attendees will explore the capabilities of LDSP using phones hacked by the presenters, by trying/extending examples written in C++ and Pd. These span oscillators, samples, effects, sensors and more. In the second half, attendees will be able to explore more advanced features, like spectral and neural processing, or to hack their own phones, using the convenient tools provided by LDSP. </p> 
 		<p>You can read more about LDSP in these <a href="https://www.dafx.de/paper-archive/2023/DAFx23_paper_44.pdf" target="_blank">two</a> <a href="https://drive.google.com/file/d/1UVR7LiwlrKoff6cJI32-H6zWrwyu4-4R/view?usp=drive_link" target="_blank">papers</a>.</p>
 
 	</div>
 
-	<!--CLOSED INTRO DIV--->
+	<!--CLOSED DESCR DIV--->
 
-	<div id="dependencies">
-		<h2> DEPENDENCIES (CHANGES LINKS?)</h2>	
+	<div class="white-back">
+		<h2>HOW TO REGISTER</h2>
+
+		<p>You can register through <a href="" target="_blank">this</a> Google form. If you don't have a Google account, please send us an email to <b>v.zappi@northeastern.edu</b> or <b>carlastapparo@gmail.com</b>, indicating your full name, academic or other affiliation and previous knowledge and/or experience.</p>
+
+	</div>
+
+	<!--CLOSED REGISTRATION DIV--->
+
+
+	<div id="dependencies" >
+		<h2> THING YOU CAN DO IN ADVANCE</h2>	
+		<p>The next steps can be done in advance of the workshop in order to save time, but we will go through them during the workshop as well.</p>
 			<ul>
 				<li>
 					<h3> Android NDK</h3>
@@ -61,11 +80,11 @@
 					<p>is this still needed?</p>
 				</li>
 				<li><h3>Git [optional] </h3>
-					<p>You can find it <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">here</a></p>.
+					<p>You can find it <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">here</a>.</p>
 				</li>
 				<li>
 					<h3>Pure Data "vanilla" [optional]</h3>
-					<p>You can find it <a href="https://puredata.info/downloads" target="_blank">here</a></p>.
+					<p>You can find it <a href="https://puredata.info/downloads" target="_blank">here</a>.</p>
 				</li>
 			</ul>
 	</div> 
@@ -74,17 +93,17 @@
 
 	<div id="install">
 		<p>
-			In order to install LDSP on your computer you need to clone the <a href="https://github.com/victorzappi/LDSP" target="_blank">Github repository</a> to a convenient location where you can access the examples and write your own codes easily. You can do so from the command line with <p>git clone --recurse-submodules https://github.com/victorzappi/LDSP.git</p>
+			In order to install LDSP on your computer you need to clone the <a href="https://github.com/victorzappi/LDSP" target="_blank">Github repository</a> to a convenient location where you can access the examples and write your own codes easily. You can do so from the command line with <p class="code">git clone --recurse-submodules https://github.com/victorzappi/LDSP.git</p>
 		</p>
 		<p>
 			Finally, you need to export a new environment vairable called NDK, to the path to the actual content fo the Android NDK. This can be done on <a href="https://stackoverflow.com/questions/13046624/how-can-i-permanently-export-a-variable-in-linux/13046663#13046663" target="_blank"><b>Linux</b></a>, <a href="https://support.apple.com/en-gb/guide/terminal/apd382cc5fa-4f58-4449-b20a-41c53c006f8f/mac" target="_blank"><b>macOS</b></a> and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4&viewFallbackFrom=powershell-7.3#saving-environment-variables-with-the-system-control-panel" target="_blank"><b>Windows</b></a>.
 		</p>
 		
 	</div>
-	<div>
+	<footer class="white-back">
 		<p>
-			Thank you very much for being interested in LDSP! And see you in the Workshop!
+		<h2>	Thank you very much for being interested in LDSP! And see you at the workshop! </h2>
 		</p>
-	</div>
+	</footer>
 </body>
 </html>
